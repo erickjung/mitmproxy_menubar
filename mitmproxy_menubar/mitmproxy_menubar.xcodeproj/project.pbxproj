@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B67C0CF1225B39DD00E14C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C0CF0225B39DD00E14C55 /* AppDelegate.swift */; };
+		B67C0CF5225B39E100E14C55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67C0CF4225B39E100E14C55 /* Assets.xcassets */; };
+		B67C0CF8225B39E100E14C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67C0CF6225B39E100E14C55 /* Main.storyboard */; };
+		B67C0D01225B428500E14C55 /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C0D00225B428500E14C55 /* MenuManager.swift */; };
+		B67C0D03225B468200E14C55 /* ProxyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C0D02225B468200E14C55 /* ProxyManager.swift */; };
+		B67C0D05225B46B600E14C55 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C0D04225B46B600E14C55 /* ServiceManager.swift */; };
+		B67C0D09225B49E000E14C55 /* proxy_off.sh in Resources */ = {isa = PBXBuildFile; fileRef = B67C0D07225B49E000E14C55 /* proxy_off.sh */; };
+		B67C0D0A225B49E000E14C55 /* proxy_on.sh in Resources */ = {isa = PBXBuildFile; fileRef = B67C0D08225B49E000E14C55 /* proxy_on.sh */; };
+		B67C0D0C225B4B4200E14C55 /* proxy_state.sh in Resources */ = {isa = PBXBuildFile; fileRef = B67C0D0B225B4B4200E14C55 /* proxy_state.sh */; };
+		B67C0D0E225B541800E14C55 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C0D0D225B541800E14C55 /* TaskManager.swift */; };
+		B67C0D11225B61DF00E14C55 /* mitmweb in Resources */ = {isa = PBXBuildFile; fileRef = B67C0D10225B61DF00E14C55 /* mitmweb */; };
+		B67C0D13225B65F400E14C55 /* service_state.sh in Resources */ = {isa = PBXBuildFile; fileRef = B67C0D12225B65F400E14C55 /* service_state.sh */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B67C0CED225B39DD00E14C55 /* mitmproxy_menubar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitmproxy_menubar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B67C0CF0225B39DD00E14C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B67C0CF4225B39E100E14C55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B67C0CF7225B39E100E14C55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B67C0CF9225B39E100E14C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B67C0CFA225B39E100E14C55 /* mitmproxy_menubar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mitmproxy_menubar.entitlements; sourceTree = "<group>"; };
+		B67C0D00225B428500E14C55 /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
+		B67C0D02225B468200E14C55 /* ProxyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyManager.swift; sourceTree = "<group>"; };
+		B67C0D04225B46B600E14C55 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		B67C0D07225B49E000E14C55 /* proxy_off.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = proxy_off.sh; sourceTree = "<group>"; };
+		B67C0D08225B49E000E14C55 /* proxy_on.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = proxy_on.sh; sourceTree = "<group>"; };
+		B67C0D0B225B4B4200E14C55 /* proxy_state.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = proxy_state.sh; sourceTree = "<group>"; };
+		B67C0D0D225B541800E14C55 /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
+		B67C0D10225B61DF00E14C55 /* mitmweb */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mitmweb; sourceTree = "<group>"; };
+		B67C0D12225B65F400E14C55 /* service_state.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = service_state.sh; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B67C0CEA225B39DD00E14C55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B67C0CE4225B39DD00E14C55 = {
+			isa = PBXGroup;
+			children = (
+				B67C0D0F225B61DF00E14C55 /* mitm */,
+				B67C0D06225B49E000E14C55 /* scripts */,
+				B67C0CEF225B39DD00E14C55 /* mitmproxy_menubar */,
+				B67C0CEE225B39DD00E14C55 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B67C0CEE225B39DD00E14C55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B67C0CED225B39DD00E14C55 /* mitmproxy_menubar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B67C0CEF225B39DD00E14C55 /* mitmproxy_menubar */ = {
+			isa = PBXGroup;
+			children = (
+				B67C0CF0225B39DD00E14C55 /* AppDelegate.swift */,
+				B67C0CF4225B39E100E14C55 /* Assets.xcassets */,
+				B67C0CF9225B39E100E14C55 /* Info.plist */,
+				B67C0CF6225B39E100E14C55 /* Main.storyboard */,
+				B67C0D00225B428500E14C55 /* MenuManager.swift */,
+				B67C0CFA225B39E100E14C55 /* mitmproxy_menubar.entitlements */,
+				B67C0D02225B468200E14C55 /* ProxyManager.swift */,
+				B67C0D04225B46B600E14C55 /* ServiceManager.swift */,
+				B67C0D0D225B541800E14C55 /* TaskManager.swift */,
+			);
+			path = mitmproxy_menubar;
+			sourceTree = "<group>";
+		};
+		B67C0D06225B49E000E14C55 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				B67C0D07225B49E000E14C55 /* proxy_off.sh */,
+				B67C0D08225B49E000E14C55 /* proxy_on.sh */,
+				B67C0D0B225B4B4200E14C55 /* proxy_state.sh */,
+				B67C0D12225B65F400E14C55 /* service_state.sh */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
+		B67C0D0F225B61DF00E14C55 /* mitm */ = {
+			isa = PBXGroup;
+			children = (
+				B67C0D10225B61DF00E14C55 /* mitmweb */,
+			);
+			path = mitm;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B67C0CEC225B39DD00E14C55 /* mitmproxy_menubar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B67C0CFD225B39E100E14C55 /* Build configuration list for PBXNativeTarget "mitmproxy_menubar" */;
+			buildPhases = (
+				B67C0CE9225B39DD00E14C55 /* Sources */,
+				B67C0CEA225B39DD00E14C55 /* Frameworks */,
+				B67C0CEB225B39DD00E14C55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mitmproxy_menubar;
+			productName = mitmproxy_menubar;
+			productReference = B67C0CED225B39DD00E14C55 /* mitmproxy_menubar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B67C0CE5225B39DD00E14C55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = e7g;
+				TargetAttributes = {
+					B67C0CEC225B39DD00E14C55 = {
+						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = B67C0CE8225B39DD00E14C55 /* Build configuration list for PBXProject "mitmproxy_menubar" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B67C0CE4225B39DD00E14C55;
+			productRefGroup = B67C0CEE225B39DD00E14C55 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B67C0CEC225B39DD00E14C55 /* mitmproxy_menubar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B67C0CEB225B39DD00E14C55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B67C0D11225B61DF00E14C55 /* mitmweb in Resources */,
+				B67C0CF5225B39E100E14C55 /* Assets.xcassets in Resources */,
+				B67C0D09225B49E000E14C55 /* proxy_off.sh in Resources */,
+				B67C0D0C225B4B4200E14C55 /* proxy_state.sh in Resources */,
+				B67C0D0A225B49E000E14C55 /* proxy_on.sh in Resources */,
+				B67C0D13225B65F400E14C55 /* service_state.sh in Resources */,
+				B67C0CF8225B39E100E14C55 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B67C0CE9225B39DD00E14C55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B67C0D0E225B541800E14C55 /* TaskManager.swift in Sources */,
+				B67C0D01225B428500E14C55 /* MenuManager.swift in Sources */,
+				B67C0D03225B468200E14C55 /* ProxyManager.swift in Sources */,
+				B67C0CF1225B39DD00E14C55 /* AppDelegate.swift in Sources */,
+				B67C0D05225B46B600E14C55 /* ServiceManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B67C0CF6225B39E100E14C55 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B67C0CF7225B39E100E14C55 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B67C0CFB225B39E100E14C55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B67C0CFC225B39E100E14C55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		B67C0CFE225B39E100E14C55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = mitmproxy_menubar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.erickjung.mitmproxy-menubar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B67C0CFF225B39E100E14C55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = mitmproxy_menubar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.erickjung.mitmproxy-menubar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B67C0CE8225B39DD00E14C55 /* Build configuration list for PBXProject "mitmproxy_menubar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B67C0CFB225B39E100E14C55 /* Debug */,
+				B67C0CFC225B39E100E14C55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B67C0CFD225B39E100E14C55 /* Build configuration list for PBXNativeTarget "mitmproxy_menubar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B67C0CFE225B39E100E14C55 /* Debug */,
+				B67C0CFF225B39E100E14C55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B67C0CE5225B39DD00E14C55 /* Project object */;
+}
