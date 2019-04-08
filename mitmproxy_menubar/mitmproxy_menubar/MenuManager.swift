@@ -42,6 +42,8 @@ final class MenuManager: NSObject {
 
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     private var menuProxy = NSMenuItem()
+    private var menuProxyInfo = NSMenuItem()
+    private var menuProxyInfoMenu = NSMenuItem()
     private var menuService = NSMenuItem()
     private var menuQuit = NSMenuItem()
 
@@ -91,18 +93,23 @@ private extension MenuManager {
 
     func configure() {
 
-        self.configureProxy()
-        self.configureService()
-        self.configureQuit()
-
         statusItem.menu = NSMenu()
         statusItem.menu?.delegate = self
 
-        statusItem.menu?.addItem(self.menuProxy)
+        // proxy & network
+        self.addItem(item: &self.menuProxy, selector: #selector(didPressProxy))
+        self.addItem(item: &self.menuProxyInfo, title: "Network Info")
         statusItem.menu?.addItem(NSMenuItem.separator())
-        statusItem.menu?.addItem(self.menuService)
+
+        self.menuProxyInfo.submenu = NSMenu()
+        self.menuProxyInfo.submenu?.addItem(self.menuProxyInfoMenu)
+
+        // mitm service
+        self.addItem(item: &self.menuService, selector: #selector(didPressService))
         statusItem.menu?.addItem(NSMenuItem.separator())
-        statusItem.menu?.addItem(self.menuQuit)
+
+        // quit
+        self.addItem(item: &self.menuQuit, selector: #selector(didPressQuit), title: "Quit")
 
         if let button = statusItem.button {
             button.image = NSImage(named: "logo")
@@ -111,23 +118,17 @@ private extension MenuManager {
         }
     }
 
-    func configureProxy() {
+    func addItem(item: inout NSMenuItem, selector: Selector? = nil, title: String = "") {
 
-        menuProxy.action = #selector(didPressProxy)
-        menuProxy.target = self
-    }
+        item.title = title
 
-    func configureService() {
+        if let selector = selector {
 
-        menuService.action = #selector(didPressService)
-        menuService.target = self
-    }
+            item.action = selector
+            item.target = self
+        }
 
-    func configureQuit() {
-
-        menuQuit.title = "Quit"
-        menuQuit.action = #selector(didPressProxy)
-        menuQuit.target = self
+        self.statusItem.menu?.addItem(item)
     }
 
     @objc func didPressProxy() {
@@ -139,6 +140,11 @@ private extension MenuManager {
 
         ServiceManager.shared.touch()
     }
+
+    @objc func didPressQuit() {
+
+        NSApp.terminate(self)
+    }
 }
 
 extension MenuManager: NSMenuDelegate {
@@ -147,5 +153,7 @@ extension MenuManager: NSMenuDelegate {
         
         menuProxy.title = ProxyManager.shared.currentState.description
         menuService.title = ServiceManager.shared.currentState.description
+
+        menuProxyInfoMenu.attributedTitle = NSAttributedString(string: ProxyManager.shared.ipInfo)
     }
 }

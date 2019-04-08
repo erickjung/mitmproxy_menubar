@@ -56,7 +56,7 @@ private extension ServiceManager {
 
         if let script = Bundle.main.path(forResource: "mitmweb", ofType: "") {
 
-            task.execute(launch: script, ignoreReturn: true)
+            task.execute(launch: script, arg: ["--set", "upstream_cert=false", "--ssl-insecure"], ignoreReturn: true)
         }
     }
 

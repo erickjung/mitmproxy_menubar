@@ -33,6 +33,13 @@ final class ProxyManager {
         }
     }
 
+    public var ipInfo: String {
+
+        get {
+            return self.checkIpInfo()
+        }
+    }
+
     private let task = TaskManager()
 
     private init() {
@@ -78,6 +85,16 @@ private extension ProxyManager {
         }
 
         return .off
+    }
+
+    func checkIpInfo() -> String {
+
+        if let script = Bundle.main.path(forResource: "ip_info", ofType: "sh") {
+
+            return task.executeShellSync(arg: script)
+        }
+
+        return "none"
     }
 }
 
