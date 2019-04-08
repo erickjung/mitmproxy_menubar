@@ -11,7 +11,7 @@
 		B67C0CF5225B39E100E14C55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67C0CF4225B39E100E14C55 /* Assets.xcassets */; };
 		B67C0CF8225B39E100E14C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67C0CF6225B39E100E14C55 /* Main.storyboard */; };
 		B67C0D01225B428500E14C55 /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C0D00225B428500E14C55 /* MenuManager.swift */; };
-		B67C0D03225B468200E14C55 /* ProxyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C0D02225B468200E14C55 /* ProxyManager.swift */; };
+		B67C0D03225B468200E14C55 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C0D02225B468200E14C55 /* NetworkManager.swift */; };
 		B67C0D05225B46B600E14C55 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C0D04225B46B600E14C55 /* ServiceManager.swift */; };
 		B67C0D09225B49E000E14C55 /* proxy_off.sh in Resources */ = {isa = PBXBuildFile; fileRef = B67C0D07225B49E000E14C55 /* proxy_off.sh */; };
 		B67C0D0A225B49E000E14C55 /* proxy_on.sh in Resources */ = {isa = PBXBuildFile; fileRef = B67C0D08225B49E000E14C55 /* proxy_on.sh */; };
@@ -30,7 +30,7 @@
 		B67C0CF9225B39E100E14C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B67C0CFA225B39E100E14C55 /* mitmproxy_menubar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mitmproxy_menubar.entitlements; sourceTree = "<group>"; };
 		B67C0D00225B428500E14C55 /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
-		B67C0D02225B468200E14C55 /* ProxyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyManager.swift; sourceTree = "<group>"; };
+		B67C0D02225B468200E14C55 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B67C0D04225B46B600E14C55 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		B67C0D07225B49E000E14C55 /* proxy_off.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = proxy_off.sh; sourceTree = "<group>"; };
 		B67C0D08225B49E000E14C55 /* proxy_on.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = proxy_on.sh; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 				B67C0CF6225B39E100E14C55 /* Main.storyboard */,
 				B67C0D00225B428500E14C55 /* MenuManager.swift */,
 				B67C0CFA225B39E100E14C55 /* mitmproxy_menubar.entitlements */,
-				B67C0D02225B468200E14C55 /* ProxyManager.swift */,
+				B67C0D02225B468200E14C55 /* NetworkManager.swift */,
 				B67C0D04225B46B600E14C55 /* ServiceManager.swift */,
 				B67C0D0D225B541800E14C55 /* TaskManager.swift */,
 			);
@@ -189,7 +189,7 @@
 			files = (
 				B67C0D0E225B541800E14C55 /* TaskManager.swift in Sources */,
 				B67C0D01225B428500E14C55 /* MenuManager.swift in Sources */,
-				B67C0D03225B468200E14C55 /* ProxyManager.swift in Sources */,
+				B67C0D03225B468200E14C55 /* NetworkManager.swift in Sources */,
 				B67C0CF1225B39DD00E14C55 /* AppDelegate.swift in Sources */,
 				B67C0D05225B46B600E14C55 /* ServiceManager.swift in Sources */,
 			);

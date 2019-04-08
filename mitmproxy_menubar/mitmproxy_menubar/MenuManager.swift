@@ -59,23 +59,23 @@ final class MenuManager: NSObject {
 
         if let button = statusItem.button {
 
-            let proxyState = ProxyManager.shared.currentState
+            let proxyState = NetworkManager.shared.currentState
             let serviceState = ServiceManager.shared.currentState
 
             statusItem.button?.alignment = .left
             statusItem.button?.imagePosition = .imageLeft
             statusItem.length = 60
 
-            if proxyState == .on && serviceState == .off {
+            if proxyState == .proxyOn && serviceState == .off {
 
                 statusItem.length = 40
                 button.title = "p"
             }
-            else if proxyState == .on && serviceState == .on {
+            else if proxyState == .proxyOn && serviceState == .on {
 
                 button.title = "p | s"
             }
-            else if proxyState == .off && serviceState == .on {
+            else if proxyState == .proxyOff && serviceState == .on {
 
                 statusItem.length = 40
                 button.title = "s"
@@ -133,7 +133,7 @@ private extension MenuManager {
 
     @objc func didPressProxy() {
 
-        ProxyManager.shared.touch()
+        NetworkManager.shared.touch()
     }
 
     @objc func didPressService() {
@@ -151,9 +151,9 @@ extension MenuManager: NSMenuDelegate {
 
     func menuWillOpen(_ menu: NSMenu) {
         
-        menuProxy.title = ProxyManager.shared.currentState.description
+        menuProxy.title = NetworkManager.shared.currentState.description
         menuService.title = ServiceManager.shared.currentState.description
 
-        menuProxyInfoMenu.attributedTitle = NSAttributedString(string: ProxyManager.shared.ipInfo)
+        menuProxyInfoMenu.attributedTitle = NSAttributedString(string: NetworkManager.shared.ipInfo)
     }
 }
