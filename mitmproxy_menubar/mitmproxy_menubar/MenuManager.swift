@@ -8,34 +8,6 @@
 
 import Cocoa
 
-enum MenuServiceColorType {
-
-    case red
-    case green
-    case blue
-
-    var color: (NSColor, NSColor) {
-
-        switch self {
-
-            case .red:
-
-                return (NSColor(red: 243.0/255.0, green: 96.0/255.0 , blue: 99.0/255.0 , alpha: 1.0),
-                        NSColor(red: 242.0/255.0, green: 184.0/255.0, blue: 194.0/255.0, alpha: 1.0))
-
-            case .green:
-
-                return (NSColor(red: 67.0/255.0, green: 206.0/255.0, blue: 162.0/255.0, alpha: 1.0),
-                        NSColor(red: 24.0/255.0, green: 90.0/255.0 , blue: 157.0/255.0 , alpha: 1.0))
-
-            case .blue:
-
-                return (NSColor(red: 31.0/255.0, green: 28.0/255.0, blue: 44.0/255.0, alpha: 1.0),
-                        NSColor(red: 146.0/255.0, green: 141.0/255.0 , blue: 171.0/255.0 , alpha: 1.0))
-        }
-    }
-}
-
 final class MenuManager: NSObject {
 
     static let shared = MenuManager()

@@ -36,7 +36,8 @@ final class TaskManager {
 
 private extension TaskManager {
 
-    func executeInternalSync(launch: String, arg: [String]?) -> String {
+    @discardableResult
+    func executeTask(launch: String, arg: [String]?) -> Pipe {
 
         let task = Process()
         task.launchPath = launch
@@ -50,6 +51,13 @@ private extension TaskManager {
         task.standardOutput = pipe
         task.launch()
 
+        return pipe
+    }
+
+    func executeInternalSync(launch: String, arg: [String]?) -> String {
+
+        let pipe = self.executeTask(launch: launch, arg: arg)
+
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
         let output = String(data: data, encoding: .utf8)
 
@@ -60,17 +68,7 @@ private extension TaskManager {
 
         DispatchQueue.global(qos: .background).async {
 
-            let task = Process()
-            task.launchPath = launch
-
-            if let arg = arg {
-
-                task.arguments = arg
-            }
-
-            let pipe = Pipe()
-            task.standardOutput = pipe
-            task.launch()
+            let pipe = self.executeTask(launch: launch, arg: arg)
 
             if ignoreReturn {
 
@@ -89,7 +87,6 @@ private extension TaskManager {
                     self.delegate?.result(value: output ?? "")
                 }
             }
-
         }
     }
 }
