@@ -16,8 +16,8 @@ enum ServiceState {
     var description: String {
 
         switch self {
-            case .on: return "Service - ON"
-            case .off: return "Service - OFF"
+            case .on: return "Disable Service"
+            case .off: return "Enable Service"
         }
     }
 }

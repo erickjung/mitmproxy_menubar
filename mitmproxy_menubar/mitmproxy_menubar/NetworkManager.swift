@@ -16,8 +16,8 @@ enum NetworkState {
     var description: String {
 
         switch self {
-            case .proxyOn: return "Proxy - ON"
-            case .proxyOff: return "Proxy - OFF"
+            case .proxyOn: return "Disable Proxy"
+            case .proxyOff: return "Enable Proxy"
         }
     }
 }
