@@ -21,6 +21,9 @@ Menu:
   <li><b>Network Info</b> - the information for active macOS connections, so you can use in your devices easily</li>
 </ul>
 
+### <b>Mitmproxy</b>
+
+For more info about mitmproxy, please access: [https://mitmproxy.org](https://mitmproxy.org)
 
 ### <b>License</b>
 MIT
