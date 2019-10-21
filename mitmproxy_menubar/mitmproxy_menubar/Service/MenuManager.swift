@@ -16,9 +16,12 @@ final class MenuManager: NSObject, StoreSubscriber {
     typealias StoreSubscriberStateType = DataState
     
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+    
     private var menuProxy = NSMenuItem()
     private var menuProxyInfo = NSMenuItem()
     private var menuProxyInfoMenu = NSMenuItem()
+    private var menuAboutInfo = NSMenuItem()
+    private var menuAboutInfoMenu = NSMenuItem()
     private var menuService = NSMenuItem()
     private var menuQuit = NSMenuItem()
 
@@ -72,16 +75,32 @@ private extension MenuManager {
 
         // proxy & network
         self.addItem(item: &self.menuProxy, selector: #selector(didPressProxy))
-        self.addItem(item: &self.menuProxyInfo, title: "Network Info")
-        statusItem.menu?.addItem(NSMenuItem.separator())
-
-        self.menuProxyInfo.submenu = NSMenu()
-        self.menuProxyInfo.submenu?.addItem(self.menuProxyInfoMenu)
 
         // mitm service
         self.addItem(item: &self.menuService, selector: #selector(didPressMitm))
+        
+        // network info
+        self.addItem(item: &self.menuProxyInfo, title: "Network Info")
+        self.menuProxyInfo.submenu = NSMenu()
+        self.menuProxyInfo.submenu?.addItem(self.menuProxyInfoMenu)
+
         statusItem.menu?.addItem(NSMenuItem.separator())
 
+        // about
+        self.addItem(item: &self.menuAboutInfo, title: "About")
+        self.menuAboutInfo.submenu = NSMenu()
+        self.menuAboutInfo.submenu?.addItem(self.menuAboutInfoMenu)
+        
+        let aboutText = """
+        mitmproxy menubar
+        version: \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString")!).\(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion")!)
+        
+        erick jung
+        www.erickjung.com
+        2019
+        """
+        self.menuAboutInfoMenu.attributedTitle = NSAttributedString(string: aboutText)
+        
         // quit
         self.addItem(item: &self.menuQuit, selector: #selector(didPressQuit), title: "Quit")
 
