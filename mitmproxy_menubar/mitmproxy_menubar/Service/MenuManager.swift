@@ -7,11 +7,14 @@
 //
 
 import Cocoa
+import ReSwift
 
-final class MenuManager: NSObject {
+final class MenuManager: NSObject, StoreSubscriber {
 
     static let shared = MenuManager()
 
+    typealias StoreSubscriberStateType = DataState
+    
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     private var menuProxy = NSMenuItem()
     private var menuProxyInfo = NSMenuItem()
@@ -24,38 +27,53 @@ final class MenuManager: NSObject {
     func initialize() {
 
         self.configure()
-        self.update()
+        
+        DataStore.state.subscribe(self)
+        DataStore.state.dispatch(ConfigAction())
     }
 
-    func update() {
+    func newState(state: DataState) {
 
-        if let button = statusItem.button {
+        statusItem.button?.alignment = .left
+        statusItem.button?.imagePosition = .imageLeft
+        statusItem.length = 40
+        
+        if state.isProxyEnabled && !state.isMitmEnabled {
 
-            let proxyState = NetworkManager.shared.currentState
-            let serviceState = ServiceManager.shared.currentState
+            statusItem.button?.title = "p"
+        }
+        else if state.isProxyEnabled && state.isMitmEnabled {
 
-            statusItem.button?.alignment = .left
-            statusItem.button?.imagePosition = .imageLeft
             statusItem.length = 60
+            statusItem.button?.title = "p | m"
+        }
+        else if !state.isProxyEnabled && state.isMitmEnabled {
 
-            if proxyState == .proxyOn && serviceState == .off {
+            statusItem.button?.title = "m"
 
-                statusItem.length = 40
-                button.title = "p"
-            }
-            else if proxyState == .proxyOn && serviceState == .on {
+        } else {
 
-                button.title = "p | s"
-            }
-            else if proxyState == .proxyOff && serviceState == .on {
+            statusItem.button?.alignment = .center
+            statusItem.button?.imagePosition = .imageOnly
+            statusItem.button?.title = ""
+        }
+        
+        menuProxy.title = state.isProxyEnabled ? "Disable Proxy" : "Enable Proxy"
+        menuService.title = state.isMitmEnabled ? "Disable Mitm" : "Enable Mitm"
 
-                statusItem.length = 40
-                button.title = "s"
+        if let action = state.lastAction {
 
-            } else {
+            switch action {
 
-                statusItem.length = NSStatusItem.squareLength
-                button.title = ""
+                case let result as TaskResultAction:
+                     
+                    if result.task == .ipInfo {
+                        
+                        menuProxyInfoMenu.attributedTitle = NSAttributedString(string: result.data ?? "")
+                    }
+                    
+                default:
+                    break
             }
         }
     }
@@ -66,7 +84,6 @@ private extension MenuManager {
     func configure() {
 
         statusItem.menu = NSMenu()
-        statusItem.menu?.delegate = self
 
         // proxy & network
         self.addItem(item: &self.menuProxy, selector: #selector(didPressProxy))
@@ -77,7 +94,7 @@ private extension MenuManager {
         self.menuProxyInfo.submenu?.addItem(self.menuProxyInfoMenu)
 
         // mitm service
-        self.addItem(item: &self.menuService, selector: #selector(didPressService))
+        self.addItem(item: &self.menuService, selector: #selector(didPressMitm))
         statusItem.menu?.addItem(NSMenuItem.separator())
 
         // quit
@@ -105,27 +122,16 @@ private extension MenuManager {
 
     @objc func didPressProxy() {
 
-        NetworkManager.shared.touch()
+        DataStore.state.dispatch(TouchProxyAction())
     }
 
-    @objc func didPressService() {
+    @objc func didPressMitm() {
 
-        ServiceManager.shared.touch()
+        DataStore.state.dispatch(TouchMitmAction())
     }
 
     @objc func didPressQuit() {
 
         NSApp.terminate(self)
-    }
-}
-
-extension MenuManager: NSMenuDelegate {
-
-    func menuWillOpen(_ menu: NSMenu) {
-        
-        menuProxy.title = NetworkManager.shared.currentState.description
-        menuService.title = ServiceManager.shared.currentState.description
-
-        menuProxyInfoMenu.attributedTitle = NSAttributedString(string: NetworkManager.shared.ipInfo)
     }
 }

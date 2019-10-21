@@ -11,18 +11,23 @@
 		B67C0CF5225B39E100E14C55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67C0CF4225B39E100E14C55 /* Assets.xcassets */; };
 		B67C0CF8225B39E100E14C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67C0CF6225B39E100E14C55 /* Main.storyboard */; };
 		B67C0D01225B428500E14C55 /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C0D00225B428500E14C55 /* MenuManager.swift */; };
-		B67C0D03225B468200E14C55 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C0D02225B468200E14C55 /* NetworkManager.swift */; };
-		B67C0D05225B46B600E14C55 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C0D04225B46B600E14C55 /* ServiceManager.swift */; };
 		B67C0D09225B49E000E14C55 /* proxy_off.sh in Resources */ = {isa = PBXBuildFile; fileRef = B67C0D07225B49E000E14C55 /* proxy_off.sh */; };
 		B67C0D0A225B49E000E14C55 /* proxy_on.sh in Resources */ = {isa = PBXBuildFile; fileRef = B67C0D08225B49E000E14C55 /* proxy_on.sh */; };
-		B67C0D0C225B4B4200E14C55 /* proxy_state.sh in Resources */ = {isa = PBXBuildFile; fileRef = B67C0D0B225B4B4200E14C55 /* proxy_state.sh */; };
 		B67C0D0E225B541800E14C55 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67C0D0D225B541800E14C55 /* TaskManager.swift */; };
 		B67C0D11225B61DF00E14C55 /* mitmweb in Resources */ = {isa = PBXBuildFile; fileRef = B67C0D10225B61DF00E14C55 /* mitmweb */; };
-		B67C0D13225B65F400E14C55 /* service_state.sh in Resources */ = {isa = PBXBuildFile; fileRef = B67C0D12225B65F400E14C55 /* service_state.sh */; };
 		B67C0D15225B822300E14C55 /* ip_info.sh in Resources */ = {isa = PBXBuildFile; fileRef = B67C0D14225B822300E14C55 /* ip_info.sh */; };
+		B6AECDA0235DAB34009454FC /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AECD9F235DAB34009454FC /* DataStore.swift */; };
+		B6AECDA2235DAB6F009454FC /* DataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AECDA1235DAB6F009454FC /* DataState.swift */; };
+		B6AECDA4235DAC26009454FC /* DataActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AECDA3235DAC26009454FC /* DataActions.swift */; };
+		B6AECDA6235DAC2F009454FC /* DataReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AECDA5235DAC2F009454FC /* DataReducer.swift */; };
+		B6AECDA9235DE9D9009454FC /* mitm_off.sh in Resources */ = {isa = PBXBuildFile; fileRef = B6AECDA7235DE9D9009454FC /* mitm_off.sh */; };
+		B6AECDAA235DE9D9009454FC /* mitm_on.sh in Resources */ = {isa = PBXBuildFile; fileRef = B6AECDA8235DE9D9009454FC /* mitm_on.sh */; };
+		F16800393F4922A7815D705C /* Pods_mitmproxy_menubar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F43A82F45F6DF5FF88DBE7 /* Pods_mitmproxy_menubar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4457DAA770BC35D32E4EE4ED /* Pods-mitmproxy_menubar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mitmproxy_menubar.release.xcconfig"; path = "Target Support Files/Pods-mitmproxy_menubar/Pods-mitmproxy_menubar.release.xcconfig"; sourceTree = "<group>"; };
+		B0791F3E3F829F0137C025F5 /* Pods-mitmproxy_menubar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mitmproxy_menubar.debug.xcconfig"; path = "Target Support Files/Pods-mitmproxy_menubar/Pods-mitmproxy_menubar.debug.xcconfig"; sourceTree = "<group>"; };
 		B67C0CED225B39DD00E14C55 /* mitmproxy_menubar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mitmproxy_menubar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67C0CF0225B39DD00E14C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B67C0CF4225B39E100E14C55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,15 +35,18 @@
 		B67C0CF9225B39E100E14C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B67C0CFA225B39E100E14C55 /* mitmproxy_menubar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mitmproxy_menubar.entitlements; sourceTree = "<group>"; };
 		B67C0D00225B428500E14C55 /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
-		B67C0D02225B468200E14C55 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		B67C0D04225B46B600E14C55 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		B67C0D07225B49E000E14C55 /* proxy_off.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = proxy_off.sh; sourceTree = "<group>"; };
 		B67C0D08225B49E000E14C55 /* proxy_on.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = proxy_on.sh; sourceTree = "<group>"; };
-		B67C0D0B225B4B4200E14C55 /* proxy_state.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = proxy_state.sh; sourceTree = "<group>"; };
 		B67C0D0D225B541800E14C55 /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		B67C0D10225B61DF00E14C55 /* mitmweb */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mitmweb; sourceTree = "<group>"; };
-		B67C0D12225B65F400E14C55 /* service_state.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = service_state.sh; sourceTree = "<group>"; };
 		B67C0D14225B822300E14C55 /* ip_info.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ip_info.sh; sourceTree = "<group>"; };
+		B6AECD9F235DAB34009454FC /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		B6AECDA1235DAB6F009454FC /* DataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataState.swift; sourceTree = "<group>"; };
+		B6AECDA3235DAC26009454FC /* DataActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataActions.swift; sourceTree = "<group>"; };
+		B6AECDA5235DAC2F009454FC /* DataReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReducer.swift; sourceTree = "<group>"; };
+		B6AECDA7235DE9D9009454FC /* mitm_off.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = mitm_off.sh; sourceTree = "<group>"; };
+		B6AECDA8235DE9D9009454FC /* mitm_on.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = mitm_on.sh; sourceTree = "<group>"; };
+		B7F43A82F45F6DF5FF88DBE7 /* Pods_mitmproxy_menubar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mitmproxy_menubar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,12 +54,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16800393F4922A7815D705C /* Pods_mitmproxy_menubar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9319D7BF21691F63CDDB556D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7F43A82F45F6DF5FF88DBE7 /* Pods_mitmproxy_menubar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B67C0CE4225B39DD00E14C55 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +76,8 @@
 				B67C0D06225B49E000E14C55 /* scripts */,
 				B67C0CEF225B39DD00E14C55 /* mitmproxy_menubar */,
 				B67C0CEE225B39DD00E14C55 /* Products */,
+				C0541D44F2A1C15932E2444F /* Pods */,
+				9319D7BF21691F63CDDB556D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,15 +92,13 @@
 		B67C0CEF225B39DD00E14C55 /* mitmproxy_menubar */ = {
 			isa = PBXGroup;
 			children = (
+				B6AECD9E235DAB27009454FC /* Data */,
+				B6AECDAB235E12E9009454FC /* Service */,
 				B67C0CF0225B39DD00E14C55 /* AppDelegate.swift */,
 				B67C0CF4225B39E100E14C55 /* Assets.xcassets */,
 				B67C0CF9225B39E100E14C55 /* Info.plist */,
 				B67C0CF6225B39E100E14C55 /* Main.storyboard */,
-				B67C0D00225B428500E14C55 /* MenuManager.swift */,
 				B67C0CFA225B39E100E14C55 /* mitmproxy_menubar.entitlements */,
-				B67C0D02225B468200E14C55 /* NetworkManager.swift */,
-				B67C0D04225B46B600E14C55 /* ServiceManager.swift */,
-				B67C0D0D225B541800E14C55 /* TaskManager.swift */,
 			);
 			path = mitmproxy_menubar;
 			sourceTree = "<group>";
@@ -90,10 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				B67C0D14225B822300E14C55 /* ip_info.sh */,
+				B6AECDA7235DE9D9009454FC /* mitm_off.sh */,
+				B6AECDA8235DE9D9009454FC /* mitm_on.sh */,
 				B67C0D07225B49E000E14C55 /* proxy_off.sh */,
 				B67C0D08225B49E000E14C55 /* proxy_on.sh */,
-				B67C0D0B225B4B4200E14C55 /* proxy_state.sh */,
-				B67C0D12225B65F400E14C55 /* service_state.sh */,
 			);
 			path = scripts;
 			sourceTree = "<group>";
@@ -106,6 +123,35 @@
 			path = mitm;
 			sourceTree = "<group>";
 		};
+		B6AECD9E235DAB27009454FC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B6AECDA3235DAC26009454FC /* DataActions.swift */,
+				B6AECDA5235DAC2F009454FC /* DataReducer.swift */,
+				B6AECDA1235DAB6F009454FC /* DataState.swift */,
+				B6AECD9F235DAB34009454FC /* DataStore.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B6AECDAB235E12E9009454FC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B67C0D00225B428500E14C55 /* MenuManager.swift */,
+				B67C0D0D225B541800E14C55 /* TaskManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C0541D44F2A1C15932E2444F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0791F3E3F829F0137C025F5 /* Pods-mitmproxy_menubar.debug.xcconfig */,
+				4457DAA770BC35D32E4EE4ED /* Pods-mitmproxy_menubar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B67C0CFD225B39E100E14C55 /* Build configuration list for PBXNativeTarget "mitmproxy_menubar" */;
 			buildPhases = (
+				5E0BC9B1BA79A52C0A213AF3 /* [CP] Check Pods Manifest.lock */,
 				B67C0CE9225B39DD00E14C55 /* Sources */,
 				B67C0CEA225B39DD00E14C55 /* Frameworks */,
 				B67C0CEB225B39DD00E14C55 /* Resources */,
+				DF86C2B82B203211F81C2349 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,18 +217,65 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6AECDAA235DE9D9009454FC /* mitm_on.sh in Resources */,
 				B67C0D11225B61DF00E14C55 /* mitmweb in Resources */,
 				B67C0CF5225B39E100E14C55 /* Assets.xcassets in Resources */,
 				B67C0D09225B49E000E14C55 /* proxy_off.sh in Resources */,
-				B67C0D0C225B4B4200E14C55 /* proxy_state.sh in Resources */,
+				B6AECDA9235DE9D9009454FC /* mitm_off.sh in Resources */,
 				B67C0D0A225B49E000E14C55 /* proxy_on.sh in Resources */,
-				B67C0D13225B65F400E14C55 /* service_state.sh in Resources */,
 				B67C0CF8225B39E100E14C55 /* Main.storyboard in Resources */,
 				B67C0D15225B822300E14C55 /* ip_info.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E0BC9B1BA79A52C0A213AF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mitmproxy_menubar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF86C2B82B203211F81C2349 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mitmproxy_menubar/Pods-mitmproxy_menubar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mitmproxy_menubar/Pods-mitmproxy_menubar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B67C0CE9225B39DD00E14C55 /* Sources */ = {
@@ -189,9 +284,11 @@
 			files = (
 				B67C0D0E225B541800E14C55 /* TaskManager.swift in Sources */,
 				B67C0D01225B428500E14C55 /* MenuManager.swift in Sources */,
-				B67C0D03225B468200E14C55 /* NetworkManager.swift in Sources */,
+				B6AECDA6235DAC2F009454FC /* DataReducer.swift in Sources */,
+				B6AECDA0235DAB34009454FC /* DataStore.swift in Sources */,
 				B67C0CF1225B39DD00E14C55 /* AppDelegate.swift in Sources */,
-				B67C0D05225B46B600E14C55 /* ServiceManager.swift in Sources */,
+				B6AECDA2235DAB6F009454FC /* DataState.swift in Sources */,
+				B6AECDA4235DAC26009454FC /* DataActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,10 +423,12 @@
 		};
 		B67C0CFE225B39E100E14C55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0791F3E3F829F0137C025F5 /* Pods-mitmproxy_menubar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
 				INFOPLIST_FILE = mitmproxy_menubar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -344,10 +443,12 @@
 		};
 		B67C0CFF225B39E100E14C55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4457DAA770BC35D32E4EE4ED /* Pods-mitmproxy_menubar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
 				INFOPLIST_FILE = mitmproxy_menubar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
