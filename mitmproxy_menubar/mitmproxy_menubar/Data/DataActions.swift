@@ -15,8 +15,6 @@ struct TouchMitmAction: Action {}
 
 struct TouchProxyAction: Action {}
 
-struct CheckServiceStateAction: Action {}
-
 struct TaskResultAction: Action {
 
     var task: TaskType
