@@ -71,7 +71,7 @@ private extension TaskManager {
 
             if let script = Bundle.main.path(forResource: task.command.script, ofType: "sh") {
             
-                let pipe = self.executeTask(launch: "/bin/sh", arg: [script])
+                let pipe = self.executeTask(launch: "/bin/sh", arg: [script, (script as NSString).deletingLastPathComponent])
 
                 if task.command.ignoreReturn {
 
