@@ -60,22 +60,7 @@ final class MenuManager: NSObject, StoreSubscriber {
         
         menuProxy.title = state.isProxyEnabled ? "Disable Proxy" : "Enable Proxy"
         menuService.title = state.isMitmEnabled ? "Disable Mitm" : "Enable Mitm"
-
-        if let action = state.lastAction {
-
-            switch action {
-
-                case let result as TaskResultAction:
-                     
-                    if result.task == .ipInfo {
-                        
-                        menuProxyInfoMenu.attributedTitle = NSAttributedString(string: result.data ?? "")
-                    }
-                    
-                default:
-                    break
-            }
-        }
+        menuProxyInfoMenu.attributedTitle = NSAttributedString(string: state.ipInfo)
     }
 }
 

@@ -47,6 +47,13 @@ func dataReducer(_ action: Action, state: DataState?) -> DataState {
               state.isProxyEnabled = false
           }
 
+        case let action as TaskResultAction:
+
+            if action.task == .ipInfo {
+                
+                state.ipInfo = action.data ?? ""
+            }
+
         default:
             break
     }
